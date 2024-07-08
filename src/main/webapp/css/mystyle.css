@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+*{
+    font-family: "Gamja Flower", sans-serif;
+}
+
+header{
+    text-align: center;
+}
+
+nav{
+    text-align: right;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul > li:first-child{
+    color: red;
+}
+
+ul > li:last-child{
+    color: pink;
+}
+
+ul > li:nth-child(2){
+    color: yellow;
+}
+
+ul > li:nth-child(3){
+    color: green;
+}
+
+ul > li:nth-last-child(2){
+    color: yellowgreen;
+}
+
+ul > li:nth-last-child(3){
+    color: orange;
+}
+
+a{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* border: 2px solid red; */
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: dashed;
+}
+
+nav{
+    /*
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    */
+    /*top부터 시계방향으로*/
+    margin: 10px 15px;
+    
+}
+
+#coment, #bro1, #bro2, #bro3{
+    display: inline;
+    border-style: solid;
+}
+
+.green{
+    width: 200px;
+    height: 150px;
+    display: inline-block;
+    background-color: rgb(177, 193, 228);
+    background-image: url('../img/dog2.jpg');
+    background-size: cover;
+}

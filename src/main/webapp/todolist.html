@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <hdad>
+    	<meta charset="utf-8">
+        <title>To Do List</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        <style>
+            table{
+                margin-top: 20px;
+                width: 300px;
+            }
+            table .no{
+                margin: 3px;
+                width: 50px;
+                background-color: lightsteelblue;
+            }
+            table .todolist{
+                margin: 3px;
+                background-color: lightsteelblue;
+            }
+            table .checklist{
+                margin: 3px;
+                width: 90px;
+                background-color: lightsteelblue;
+            }
+            table td{
+                background-color: rgb(219, 232, 250);
+            }
+            .drawlin{
+                text-decoration: line-through;
+            }
+        </style>
+    </hdad>
+    <body>
+        <h1>To Do List</h1>
+        <div id="app">
+            <input type="text" id="taskInput" placeholder="할 일을 입력하세요." onkeydown="checkKey(event)">
+            <button id="addTask" onclick="addList()">추가</button>
+            <button id="delTask" onclick="delList()">삭제</button>
+            <table id="taskList">
+                <tr>
+                    <th class="no">번호</th>
+                    <th class="todolist">할일</th>
+                    <th class="checklist">전체선택<input type="checkbox" onchange="allCheck(this)"></th>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var listNo = 0;
+            //const taskInput = document.getElementById("taskInput");
+            const taskList = document.getElementById("taskList");  
+
+            function addList() {
+            	//const taskInput = $('#taskInput').val();
+                //const listItem = document.createElement("tr");
+
+                if($('#taskInput').val() == ""){
+                    window.alert("내용을 입력해 주세요.");
+                    $('#taskInput').focus();
+                    return;
+                }
+
+                const listItem = $(`
+                <tr>
+                <td>${listNo += 1}</td>
+                <td onclick="drawlin(this)">${$('#taskInput').val()}</td>
+                <td><input type="checkbox" name="check"></td>
+                <tr>
+                `);
+
+                $('#taskList').append(listItem);
+                $('#taskInput').val('');
+            }
+
+            function drawlin(item){
+                item.setAttribute("class","drawlin")
+            }
+
+            function delList(){
+                const checkboxList = document.querySelectorAll("td input");
+
+                // for(let i = 0; i<checkboxList.length; i++ )
+                // for(let i in checkboxList)
+                for(let i = 0; i<checkboxList.length; i++ ){
+                    if(checkboxList[i].checked){
+                    	$(checkboxList[i].closest('t ').remove());                    
+                    }
+                }
+                document.querySelector("th input").checked = false;
+            }
+
+            function allCheck(ckbx){
+                const ck = ckbx.checked;
+                const checkboxes = document.querySelectorAll("td input");
+
+                for(let i in checkboxes){
+                    checkboxes[i].checked = ck;
+                }
+            }
+
+            // function allCheck(){
+            //     const allcheckList = document.querySelector("th input");
+            //     const checkboxes = document.querySelectorAll("td input");
+            //     if (allcheckList.checked){
+            //         for (const checkbox of checkboxes){
+            //             checkbox.checked = true;
+            //         }
+            //     }else{
+            //         for(const checkbox of checkboxes){
+            //             checkbox.checked = false;
+            //         }
+            //     }
+            // }
+
+            function checkKey(event){
+                console.log(event);
+                if(event.key == 'Enter'){
+                    addList();
+                }
+            }
+        </script>
+    </body>
+</html>

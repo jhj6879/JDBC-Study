@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>셀프체크</title>
+    </head>
+    <body>
+        <!-- <div>
+            구구단<br>
+            <script>
+                for (let i=2;i<=9;i++){
+                    document.write(`${i}단<br><br>`);
+                    for (let j=1;j<=9;j++){
+                        document.write(`${i} X ${j} = ${i*j}<br><br>`);
+                    }
+                }
+            </script>
+        </div>
+        <div>
+            <br>
+            <script>
+                document.write("암스트롱 숫자<br><br>")
+                for (let i=100;i<=999;i++){
+                    // 100의 자리 구하기
+                    let n100 = Math.floor(i/100);
+                    // 10의 자리 구하기
+                    let n10 = i%100;
+                    n10 = Math.floor(n10/10);
+                    // 1의 자리 구하기
+                    let n1 = i%10;
+                    let amstrong = (n100**3)+(n10**3)+(n1**3);
+                    // 암스트롱 숫자 확인
+                    if(amstrong==i){
+                        document.write(`${amstrong}는 암스트롱 수<br><br>`)
+                    }
+                }
+            </script>
+        </div>  -->
+        <div>
+            <h2>체질량지수(BMI)</h2>
+            <form name="bmiForm">
+                키 <input type="text" name="height"> cm <br>
+                체중 <input type="text" name="weight"> kg <br>
+            </form>
+            <button onclick="bmicalc()">BMI</button>
+
+            <script>
+                function bmicalc(){
+                    let bmi = document.bmiForm.weight.value / ((document.bmiForm.height.value/100)**2);
+                    
+                    const result = document.createElement("p");
+                    document.bmiForm.appendChild(result);
+                    result.setAttribute("type","text");
+
+                    if(bmi > 25){
+                        result.innerText="비만";
+                    }
+                    else if(bmi > 23){
+                        result.innerText="과체중";
+                    }
+                    else if(bmi > 18.5){
+                        result.innerText="정상";
+                    }
+                    else{
+                        result.innerText="저체중";
+                    }
+                }
+            </script>
+            
+        </div>
+    </body>
+</html>

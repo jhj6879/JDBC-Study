@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>window 객체 확인</title>
+    </head>
+    <body>
+        <button onclick="printInfo()">window 객체 속성</button>
+        <script>
+          function printInfo(){
+            console.log(`웹 브라우저의 너비: ${window.innerWidth}`);
+            console.log(`웹 브라우저의 높이: ${window.innerHeight}`);
+            console.log(`웹 브라우저 창의 너비: ${window.outerWidth}`);
+            console.log(`웹 브라우저 창의 높이: ${window.outerHeight}`);
+            console.log(`웹 브라우저 창 위쪽 면과 모니터 사이의 간격: ${window.screenTop}/${window.screenY}`);
+            console.log(`웹 브라우저 창 왼쪽 면과 모니터 사이의 간격: ${window.screenLeft}/${window.screenX}`);
+            console.log(`웹 브라우저 창의 스크롤 가로 위치: ${window.scrollX}`);
+            console.log(`웹 브라우저 창의 스크롤 세로 위치: ${window.scrollY}`);
+          }
+        </script>
+
+        <button onclick="popup()">팝업</button>
+        <script>
+        function popup(){
+            window.alert("팝업창을 띄웁니다.");
+            window.open('popup.html', '팝업', 'width=200, height=100, top=400, left=400');
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+/* 
+*은 전체 선택자 이지만 그 전에 먼저 작성 한 것이 있으면 우선 선택이 되어 
+우선 우선순위 높은거 부터 적용 후에 나머지를 전체 적용 한다.
+*/
+*{
+    color: blueviolet;
+    font-family: "Gamja Flower", sans-serif;
+}
+
+h1{
+    color: #919ac5;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/*
+태그 선택자는 아래 h2와 a처럼 지정한 태그 모든 스타일을 적용한다
+*/
+h2{
+    color: rgb(0,0,255);
+    font-size: 18px;
+    font-style: italic;
+}
+
+a{
+    color: blue;
+    font-style: oblique;
+    text-decoration: none;
+}
+
+p{
+    line-height: 30px;
+}
+
+q{
+    color: red;
+    letter-spacing: 15px;
+}
+
+/*
+#은 id
+*/
+#title3{
+    color: brown;
+}
+
+/*
+.은 class
+*/
+.green{
+    color: green;
+}
+
+/*
+태그 안에있는 속성으로 선택할 수 있다
+[속성]{CSS 코드}
+[속성=값]{CSS 코드}
+#id[속성]{css 코드}
+.class[속성]{css 코드}
+*/
+a[target]{
+    color:darkblue;
+}
+a[title="폼작성"]{
+    color: fuchsia;
+}
+
+/*
+그룹 선택자
+*/
+li, #title3, .green{
+    color: chartreuse;
+}
+
+/*
+자식 선택자
+*/
+.green > p{
+    color: red;
+}
+
+/*
+하위 선택자(자식, 손자까지 적용)
+*/
+
+section p{
+    color: green;
+}
+
+/*
+형제 선택자
+*/
+
+h2 + p{
+    color: blueviolet;
+}
+
+#bro ~ p{
+    color: blue;
+}
+
+/*
+가상 요소 선택자
+::before{콘텐츠 앞의 공간을 선택}
+::after{콘텐츠 뒤의 공간을 선택}
+*/
+
+h4::before{
+    content: '<before>';
+}
+
+h4::after{
+    content: '<after>';
+}
+
+/*
+가상 클래스 선택자
+기준 요소:가상 클래스 선택자{ CSS 코드 }
+:link{한 번도 방문하지 않은 링크일 때 선택}
+:visited{한 번이라도 방문한 적이 있는 링크일 때 선택}
+:hover{마우스 커서가 올라가있을 때 선택}
+:active{클릭하고 있는 동안 선택}
+등등 더 많다
+*/
+
+a:link{
+    color: green;
+}
+
+a:visited{
+    color: red;
+}
+
+a:hover{
+    color: blue;
+}
+
+a:active{
+    color: chartreuse;
+}
+
+/*
+구조적 가상 클래스 선택
+*/
+
+li:first-child{
+    color: red;
+}
+
+li:last-child{
+    color: pink;
+}
+
+li:nth-child(3){
+    color: black;
+}
+
+li:nth-last-child(2){
+    color: yellow;
+}

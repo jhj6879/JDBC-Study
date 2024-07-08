@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>노드 테스트</title>
+    </head>
+    <body>
+        <a href="#">홈</a><br>
+        <a href="#">로그인</a><br>
+        <a href="#">회원가입</a><br>
+        <script>
+            // a 엘레멘트 생성
+            const aEl = document.createElement('a');
+            // a 엘레멘트 body에 연결
+            document.body.appendChild(aEl);
+            aEl.innerHTML="길벗<br>";
+            aEl.setAttribute("href","https://www.gilbut.co.kr");
+            // // text 노드 생성
+            // const txtEl = document.createTextNode("길벗");
+            // // a 엘레멘트에 text 노드 연결
+            // document.querySelector("a").appendChild(txtEl);
+            // // href 속성 생성
+            // const hrefAttr = document.createAttribute("href");
+            // // href 속성에 값 설정
+            // hrefAttr.value = "https://www.gilbut.co.kr";
+            // // a 엘레멘트에 href 속성 설정
+            // document.querySelector("a").setAttributeNode(hrefAttr);
+            
+
+            // 위에 내용 좀더 간단하게 적용함
+            const naverEl = document.createElement("a");
+            document.body.appendChild(naverEl);
+            naverEl.innerHTML="네이버<br>";
+            naverEl.setAttribute("href","https://www.naver.com");
+
+            // 네이버 엘레멘트 삭제
+            // 바로 삭제 못하고 부모 노트에 연결된 자식 노드를 삭제할 수 있다.
+            // naverEl.parentElement.removeChild(naverEl);
+
+            // 배열 형식으로 넘어옴
+            const childNodes = document.body.childNodes;
+            console.log(childNodes);
+
+            childNodes.forEach( (node) => {
+                if (node.nodeName === "A"){
+                    node.parentNode.removeChild(node);
+                }
+            })
+        </script>
+    </body>
+</html>

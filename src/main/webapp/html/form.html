@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form Tag</title>
+    </head>
+
+    
+    <body>
+        <a href="../index.html">홈으로</a>
+        <!--
+        form 태그 안에 name 속성을 넣어 구별하면 좋다
+        action은 입력 받은 값들을 전송할 서버 url 주소
+        method는 전송 방식으로 get(노출) 또는 post(숨김) 사용
+        -->
+        <form name="myform" action="#" method="get">
+            <!--
+            형식
+            <input type="종류" name="이름" value="초깃값">
+            로그인 페이지의 아이디와 비밀번호처럼 입력받는 요소를 
+            생성할 때는 input 태그를 사용
+            -->
+            <input type="text"><br>
+            <input type="password"><br>
+            <!--checkbox는 여러개 선택해서 여러개 value의 값이 넘어감-->
+            <input type="checkbox" name="check" value="1">
+            <input type="checkbox" name="check" value="2">
+            <input type="checkbox" name="check" value="3">
+            <input type="checkbox" name="check" value="4">
+            <br>
+            <!--radio는 하나의 값만 선택이 가능하고 하나의 value의 값만 넘어감-->
+            <input type="radio" name="radio" value="1">
+            <input type="radio" name="radio" value="2">
+            <input type="radio" name="radio" value="3">
+            <input type="radio" name="radio" value="4">
+            <br>
+            <input type="file"><br>
+            <input type="button" value="버튼"><br>
+            <input type="hidden"><br>
+            <!--달력을 사용하기 위해-->
+            <input type="date"><br>
+            <!--시간만 따로-->
+            <input type="time"><br>
+            <input type="submit" value="전송"><br>
+            <input type="reset" value="삭제"><br>
+
+
+            <!--밑에 type은 자주 사용안함
+
+            <input type="tel"><br>
+            <input type="number"><br>
+            <input type="url"><br>
+            <input type="search"><br>
+            <input type="email"><br>
+
+            날짜와 시간까지 선택하기 위해
+            <input type="datetime-local"><br>
+            <input type="month"><br>
+            <input type="week"><br>
+
+            범위 지정 ex) 금액, 붓 크기 등등
+            <input type="range"><br>
+            <input type="color"><br>
+
+            -->
+        </form>
+    </body>
+</html>

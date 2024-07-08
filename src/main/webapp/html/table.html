@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Table</title>
+        <style>
+            th,td{
+                border-style: dotted;
+                border-width: 1px;
+                border-color: palevioletred;
+                padding: 5px 10px;
+                width: 100px;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>표만들기</h1>
+        <table>
+            <caption>표 제목</caption>
+            <!--
+            <tr> 태그는 행의 영역
+            <th> 태그는 표 열 제목
+            <td> 태그는 표 열 내용
+            -->
+            <tr>
+                <th>컬럼1</th>
+                <th>컬럼2</th>
+                <th>컬럼3</th>
+                <th>컬럼4</th>
+                <th>컬럼5</th>
+                <th>컬럼6</th>
+            </tr>
+            <tr>
+                <td rowspan="3">열1</td>
+                <td>열2</td>
+                <td>열3</td>
+                <td>열4</td>
+                <td colspan="2">열5</td>
+            </tr>
+            <tr>
+                <td>열2</td>
+                <td>열3</td>
+                <td>열4</td>
+                <td>열5</td>
+                <td>열6</td>
+            </tr>
+            <tr>
+                <td>열2</td>
+                <td>열3</td>
+                <td>열4</td>
+                <td>열5</td>
+                <td>열6</td>
+            </tr>
+            <tr>
+                <td>열1</td>
+                <td>열2</td>
+                <td>열3</td>
+                <td colspan="3" rowspan="2">열4</td>
+            </tr>
+            <tr>
+                <td>열1</td>
+                <td>열2</td>
+                <td>열3</td>
+            </tr>
+        </table>
+    </body>
+</html>

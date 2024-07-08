@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax 통신 테스트</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+function fn_process(){
+	$("#message").append("<p>나 : " + $("#send_message").val() + "</p>");
+	$.ajax(
+	{
+		type:"get",
+		dataType:"text",
+		async:true,
+		url:"http://localhost:8080/myWeb/ajax",
+		data:{param:$("#send_message").val()},
+		success:function (data,textStatus) {
+			$("#message").append("<p>서버 : " + data + "</p>");
+		},
+		error:function (data,textStatus) {
+			window.alert("에러가 발생했습니다.");
+		},
+		complete:function(data,textStatus) {
+			//window.alert("작업을 완료했습니다.");
+		}
+	}
+	);
+}
+</script>
+</head>
+<body>
+	<div id="message"></div><br>
+	<input type="text" id="send_message">
+	<input type="button" value="전송하기" onclick="fn_process()"><br>
+	
+</body>
+</html>

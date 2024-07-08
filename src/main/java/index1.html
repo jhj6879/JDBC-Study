@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My First Web Page</title>
+        <link rel="stylesheet" href="./css/mystyle.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>안녕하세요 My First Web Page 입니다.</h1>
+            <nav>
+                <!--
+                형식
+                <a href="대상 경로" target="링크 연결 방식" title="링크 설명"></a>
+                target에서 사용하는 방식은 새 창으로 열리는 방식인 _blank만 거의 사용한다.
+                title은 마우스 가져갔을 때 뜨는 설명 창
+                <a href="./html/link.html" -> 폴더에서 파일을 찾아 연결해라
+                -->
+                <a href="./html/link.html">링크연결</a>
+                |
+                <a href="https://www.naver.com/" target="_blank" title="네이버로 이동">네이버</a>
+                |
+                <a href="./html/form.html" title="폼작성">폼작성</a>
+                |
+                <a href="./html/join.html">회원가입</a>
+                |
+                <a href="./html/table.html">표만들기</a>
+                |
+                <a href="./html/position.html">Position</a>
+                |
+                <a href="./html/rayout.html">Rayout</a>
+            </nav>
+        </header>
+
+        <section>
+
+            <article>
+            <h1>제목 1</h1>
+            <p style="color:green; font-size:24px">하나의 문단을 작성할 때는 p 태그를 사용합니다.</p>
+            </article>
+
+            <article>
+                <h2>제목 2</h2>
+                <p id="coment">
+                    안녕하세요.<br>
+                    코딩 공부하기 좋은 날입니다.
+                </p>
+                <p id="bro1">
+                    <input type="checkbox" value="1">
+                    첫째
+                </p>
+                <p id="bro2">
+                    <input type="checkbox" value="1">
+                    둘째
+                </p>
+                <p id="bro3">
+                    <input type="checkbox" value="1">
+                    막내
+                </p>
+            </article>
+
+            <h3 id="title3">제목 3</h3>
+            <!--
+            blockquote 태그는 출처에서 인용한 문단 단위의 텍스트를 작성할 때 사용합니다.
+            이때 출처가 확실한 인용문은 cite 속성으로 출처 경로를 명시해야 합니다.
+            형식
+            <blockquote cite="출처 URL">문단 단위 인용문</blockquote>
+            -->
+            <fieldset>
+                <legend>HTML</legend>
+                <blockquote cite="https://ko.wikipedia.org/wiki/HTML">
+                    <p>하이퍼 텍스트 마크업 언어(Hyper Text Markup Language, HTML, 
+                        문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)는 웹 페이지를 
+                        위한 지배적인 마크업 언어다. 또한, HTML은 제목, 단락, 목록 등과 
+                        같은 본문을 위한 구조적 의미를 나타내는 것뿐만 아니라 링크, 인용과 
+                        그 밖의 항목으로 구조적 문서를 만들 수 있는 방법을 제공한다.
+                    </p>
+                </blockquote>
+            </fieldset>
+
+            <h4>제목 4</h4>
+            <!--
+            q 태그는 문단 안에 텍스트 단위의 짧은 인용문을 작성할 때 사용할 수 있는 
+            태그입니다. q 태그를 사용한 콘텐츠는 큰따옴표("")로 묶입니다.
+            형식
+            <q cite="출처 URL">짧은 인용문</q>
+            -->
+            <p>
+                차세대웹기술지원센터의 데이터에 따르면
+                <q cite="https://www.koreahtml5.kr/front/stats/browser/browserUseStats.do">
+                    2021년 대한민국에서 가장 점유율이 높은 웹 브라우저는 구글의 크롬입니다.
+                </q>
+            </p>
+
+            <h5>제목 5</h5>
+            <!--
+            <ins>추가 텍스트</ins>
+            <del>삭제 텍스트</del>
+            -->
+            <p>세일 기간을 맞이하여 온라인 강의 수강권을 할인된 금액
+                (정가<del>36,000원</del><ins> 20,000원</ins>)에 판매합니다.
+            </p>
+
+            <h6>제목 6</h6>
+            <!--
+            <sub>아래 첨자</sub>
+            <sup>위 첨자</sup>
+            -->
+            <p>공기의 원소 기호는 H<sub>2</sub>O</p>
+            <p>4<sup>2</sup>은 16입니다.</p>
+
+            <!--class는 중복으로 지정이 가능하지만 id는 중복으로 지정이 안됨-->
+            <!--<div>는 그릅 나누는 테그로 많이 사용함-->
+            <div class="green" id="movie">
+                <p>영화 소개</p>
+                <p>영화를 소개하는 페이지입니다.</p>
+                <!--span 태그는 인라인 요소를 그룹으로 묶을 때 사용합니다.-->
+                <p>이번 영화의 <span>하이라이트</span> 장면은 바로 여기입니다.</p>
+            </div>
+            <div class="green" id="tv">
+                <p>TV 프로그램 소개</p>
+                <p>TV 프로그램을 소개하는 페이지입니다.</p>
+            </div>
+
+            <h1>판매 중인 과일</h1>
+            <ul>
+                <li>사과</li>
+                <li>바나나</li>
+                <li>수박</li>
+                <li>귤</li>
+                <li>파인애플</li>
+                <li>복숭아</li>
+            </ul>
+
+            <h1>오늘 할일</h1>
+            <ol>
+                <li>아침 먹기</li>
+                <li>점심 먹기</li>
+                <li>저녁 먹기</li>
+            </ol>
+
+            <dl>
+                <dt>HTML</dt>
+                <dd>HTML은 Hyper Text Markup Language의 약자로 웹 문서의 구조를 설계하기 
+                    위한 목적으로 개발된 언어입니다.
+                </dd>
+                <dt>CSS</dt>
+                <dd>CSS는 Cascading Style Sheets의 약자로 웹 문서를 꾸미기 위한 목적으로 
+                    개발된 언어입니다.
+                </dd>
+            </dl>
+
+            <!--
+            형식
+            <img src="이미지 경로" alt="이미지 설명">
+            -->
+            <img src="./img/dog2.jpg" alt="뛰어 노는 강아지">
+
+        </section>
+
+        <aside></aside>
+
+        <footer>코리아 IT 아카데미</footer>
+
+    </body>
+</html>

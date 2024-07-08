@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Json 통신 테스트</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+function send_json(){
+	
+	// 페이지에서 서블렛에 보내는 데이터
+	var _jsonInfo = '{"name":"박지성","age":"25","getder":"남자","nickname":"날센돌이"}';
+	
+	$.ajax({
+		type:"post",
+		async:"false",
+		url:"http://localhost:8080/myWeb/json",
+		data:{jsonInfo:_jsonInfo},
+		success:function(data,textStatus) {
+			var responseData = JSON.parse(data);
+			var html = "회원정보<br>";
+			html += "==========<br>";
+			html += "이름 : " + responseData.name + "<br>";
+			html += "나이 : " + responseData.age + "<br>";
+			html += "성별 : " + responseData.getder + "<br>";
+			html += "별명 : " + responseData.nickname + "<br>";
+			
+			$("#output").html(html);
+		},
+		error:function(data,textStatus) {
+			window.alert("에러가 발생했습니다.");
+		},
+		complete:function(data,textStatus) {}
+	});
+}
+</script>
+</head>
+<body>
+<input type="button" id="checkJson" onclick="send_json()" value="전송">
+<div id="output"></div>
+</body>
+</html>
